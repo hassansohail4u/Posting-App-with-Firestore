@@ -3,22 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Posting App</title>
+    <title>Document</title>
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <h1 class="heading">╚════》"Posting App"《════╝</h1>
-
-    <form id="form">
-        <input type="text" placeholder="Enter Title" id="user-title">
-        <textarea placeholder="Enter Description" id="user-description"></textarea>
-
-        <button type="submit" class="btn">Post</button>
-    </form>
-<div class="container">
+    <div class="container">
+        <div class="login">
+           <div class="container">
+                <h1 class="login-heading">Log in</h1>
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Password"><br>
+                <input type="checkbox" id="check"><span>Remember me</span>
+                <a href="#">Forgot password?</a>
+                <button>log in</button>
+                <hr><p>Or Connect With</p><hr>
+                <ul>
+                    <li><i class="fab fa-facebook-f fa-2x"></i></li>
+                    <li><i class="fab fa-twitter fa-2x"></i></li>
+                    <li><i class="fab fa-github fa-2x"></i></li>
+                    <li><i class="fab fa-linkedin-in fa-2x"></i></li>
+                </ul>
+                <!-- <div class="clearfix"></div> -->
+           </div>
+        </div>
+        <div class="register">
+            <div class="container">
+                <i class="fas fa-user-plus  person-icon"></i>
+                <h2>Hello,User!</h2>
+                <p>Enter your personal details and start journey with us</p>
+                <button class="signupBtn">Sign up <i class="fas fa-arrow-circle-right"></i></button>
+            </div>
+        </div>  
+      </div>
     
-</div>
-<script src="https://kit.fontawesome.com/45548dcf7e.js" crossorigin="anonymous"></script>
-    <script type="module" src="./app.js"></script>
+      <script src="https://kit.fontawesome.com/d2ed415255.js"></script>
+      <script src="./app.js"></script>
 </body>
 </html>

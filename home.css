@@ -1,0 +1,148 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: lightgray;
+}
+.heading{
+    text-align: center;
+    border: 4px solid black;
+    padding: 15px 0px;
+    font-size: 62px;
+    background-color:aqua;
+}
+
+#form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px 0px;
+}
+
+#user-title{
+    width: 270px;
+    height: 35px;
+    margin: 0px 0px 15px 0px;
+    padding: 15px 8px;
+    font-size: 16px;
+    letter-spacing: 0.06em;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px gray;
+    background-color: white;
+}
+
+#user-title:focus{
+    background-color:whitesmoke;
+    box-shadow: 5px 5px 2px black;
+    border: 2px solid black;
+    text-decoration: underline;
+}
+
+#user-description{
+    border-radius: 10px;
+    width: 270px;
+    height: 60px;
+    margin: 0px 0px 15px 0px;
+    padding: 3px 8px;
+    font-size: 16px;
+    letter-spacing: 0.03em;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px gray;
+}
+
+#user-description:focus{
+    background-color:whitesmoke;
+    box-shadow: 5px 5px 2px black;
+    border: 2px solid black;
+}
+
+
+.btn{
+    font-size: 18px;
+    width: 270px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: #212529;
+    color: white;
+    font-weight: 700;
+    font-style: italic;
+    letter-spacing: 0.09em;
+}
+
+.btn:hover{
+    background-color: #141d29;
+}
+
+.delete-icon{
+    color: black;
+    border: none;
+    font-size: 23px;
+    margin: 0px 0px 0px 15px;
+    cursor: pointer;
+
+}
+
+.edit-icon{
+    color: red;
+    margin: 0px 0px 0px 17px;
+    font-size: 23px;
+    cursor: pointer;
+    
+ }
+
+
+.card-btn{  
+     border: none; 
+    color: black; 
+    background-color: transparent; 
+ }  
+
+
+.container{
+    border: 4px solid black;
+    text-align: center;
+    width: 700px;
+    margin: 0px auto;
+    background-color:#888888;
+    box-shadow: 5px 5px 4px rgb(112, 112, 112);
+    border-radius: 5px;
+}
+
+.card{
+    border: 1px solid black;
+    border-radius: 10px;
+    text-align: center;
+    width: 360px;
+    margin: 20px 170px;
+    padding: 15px 15px;
+    overflow: hidden;
+    background-color:#ccd0d5;
+    box-shadow: 3px 3px 4px black;
+}
+
+.title{
+    font-weight: 100;
+    font-size: 20px;
+    letter-spacing: 0.04em;
+    margin: 0px 0px 7px 0px;
+    text-shadow: 5px 5px 6px white;
+}
+
+.title-description-span{
+    color: #212529;
+    font-size: 21px;
+    font-weight: 800;
+    text-decoration: underline;
+}
+
+#description{
+    font-weight: 100;
+    font-size: 18px;
+    letter-spacing: 0.04em;
+    text-shadow: 5px 5px 6px white;
+    margin-bottom: 12px;
+}
