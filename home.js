@@ -1,11 +1,42 @@
-import { collection, addDoc , getDocs , Timestamp , query , orderBy , doc, deleteDoc, updateDoc } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js"; 
-import { db } from "./firebaseConfig.js"
+import { onAuthStateChanged , signOut  } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js";
+import { collection, addDoc , getDocs , Timestamp , query , orderBy , doc, deleteDoc, updateDoc  , where} from "https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js"; 
+import { auth , db } from "./firebaseConfig.js"
 
 
 const form = document.querySelector("#form");
 const title = document.querySelector("#user-title");
 const description = document.querySelector("#user-description");
 var div = document.querySelector(".container")
+const logoutBtn = document.querySelector("#logoutBtn")
+
+
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    const uid = user.uid;
+    console.log(uid);
+    getData();
+    // console.log(auth.currentUser.uid);
+    
+
+  } else {
+    window.location = "./index.html"
+  }
+});
+
+
+logoutBtn.addEventListener("click" , () => {
+  signOut(auth).then(() => {
+    window.location = "./index.html"
+  }).catch((error) => {
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: error,
+    });
+  });
+})
+
+
 
 var userPosts = [];
 
@@ -76,10 +107,12 @@ render(userPosts)
 async function getData(){
  div.innerHTML = ""
     userPosts = [];
+    
+    // orderBy("postDate", "desc"),
+const q = query(collection(db, "userPosts") ,  where("uid", "==", auth.currentUser.uid) );
+const sortData = query(collection(db, "userPosts") , orderBy("postDate", "desc"));
 
-const q = query(collection(db, "userPosts"), orderBy("postDate", "desc"));
-
-const querySnapshot = await getDocs(q);
+const querySnapshot = await getDocs(q , sortData);
 querySnapshot.forEach((doc) => {
 
         userPosts.push({...doc.data() , docId:doc.id})
@@ -106,13 +139,14 @@ form.addEventListener("submit" , async(event) => {
           title: title.value,
           description: description.value,
           postDate : Timestamp.fromDate(new Date()),
-
+          uid : auth.currentUser.uid
         });
         userPosts.unshift({
           title: title.value,
           description: description.value,
           postDate : Timestamp.fromDate(new Date()),
-          docId: docRef.id
+          docId: docRef.id,
+          uid : auth.currentUser.uid
         })
         console.log(userPosts);
         
@@ -131,4 +165,4 @@ form.addEventListener("submit" , async(event) => {
 
 
 
-getData()
+// getData()

@@ -12,26 +12,27 @@
   <div class="container">
     <div class="login">
        <div class="container">
+        <form id="form">
             <h1>Sign Up</h1>
-            <input type="email" placeholder="Email">
-            <input type="password" placeholder="Password"><br>
+            <input type="email" placeholder="Email" id="email">
+            <input type="password" placeholder="Password" id="password"><br>
             <input type="checkbox" id="check"><span>Remember me</span>
-            <a href="#">Forgot password?</a>
-            <button>log in</button>
-           
+            <button class="signupBtn">Sign Up</button>
+          </form>
        </div>
     </div>
     <div class="register">
         <div class="container">
             <i class="fas fa-user-plus fa-5x"></i>
-            <h2>Hello,friend!</h2>
+            <h2>Hello,User!</h2>
             <p>Enter your personal details and start journey with us</p>
             <button class="loginBtn"><i class="fas fa-arrow-circle-left"></i> Login</button>
         </div>
     </div>  
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://kit.fontawesome.com/d2ed415255.js"></script>
-    <script src="./signup.js"></script>
+    <script type="module" src="./signup.js"></script>
 </body>
 </html>

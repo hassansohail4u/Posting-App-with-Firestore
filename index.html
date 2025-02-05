@@ -10,12 +10,14 @@
     <div class="container">
         <div class="login">
            <div class="container">
+            <form id="form">
                 <h1 class="login-heading">Log in</h1>
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Password"><br>
+                <input type="email" placeholder="Email" id="email">
+                <input type="password" placeholder="Password" id="password"><br>
                 <input type="checkbox" id="check"><span>Remember me</span>
                 <a href="#">Forgot password?</a>
-                <button>log in</button>
+                <button class="loginBtn">log in</button>
+            </form>
                 <hr><p>Or Connect With</p><hr>
                 <ul>
                     <li><i class="fab fa-facebook-f fa-2x"></i></li>
@@ -35,8 +37,9 @@
             </div>
         </div>  
       </div>
-    
+      
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
       <script src="https://kit.fontawesome.com/d2ed415255.js"></script>
-      <script src="./app.js"></script>
+      <script type="module" src="./app.js"></script>
 </body>
 </html>
